@@ -1,0 +1,12 @@
+C:\Users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\obj\x86\Release\MainWindow.baml
+C:\Users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\obj\x86\Release\MainWindow.g.cs
+C:\Users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\obj\x86\Release\App.g.cs
+C:\Users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\obj\x86\Release\netInject.csproj.GenerateResource.Cache
+C:\Users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\bin\x86\Release\NetInject.exe.config
+C:\Users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\bin\x86\Release\NetInject.exe
+C:\Users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\bin\x86\Release\NetInject.pdb
+C:\Users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\obj\x86\Release\NetInject_MarkupCompile.cache
+C:\Users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\obj\x86\Release\NetInject.g.resources
+C:\Users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\obj\x86\Release\NetInject.Properties.Resources.resources
+C:\Users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\obj\x86\Release\NetInject.exe
+C:\Users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\obj\x86\Release\NetInject.pdb

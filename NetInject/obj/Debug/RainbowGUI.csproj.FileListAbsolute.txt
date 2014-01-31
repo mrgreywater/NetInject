@@ -1,0 +1,13 @@
+c:\users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\bin\Debug\RainbowGUI.exe.config
+c:\users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\bin\Debug\RainbowGUI.exe
+c:\users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\bin\Debug\RainbowGUI.pdb
+c:\users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\obj\Debug\MainWindow.baml
+c:\users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\obj\Debug\MainWindow.g.cs
+c:\users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\obj\Debug\App.g.cs
+c:\users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\obj\Debug\RainbowGUI_MarkupCompile.cache
+c:\users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\obj\Debug\RainbowGUI.g.resources
+c:\users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\obj\Debug\RainbowGUI.Properties.Resources.resources
+c:\users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\obj\Debug\RainbowGUI.csproj.GenerateResource.Cache
+c:\users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\obj\Debug\RainbowGUI.exe
+c:\users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\obj\Debug\RainbowGUI.pdb
+C:\Users\mrgre_000\documents\visual studio 2013\Projects\RainbowGUI\RainbowGUI\obj\Debug\RainbowGUI.csprojResolveAssemblyReference.cache
