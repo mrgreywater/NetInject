@@ -42,3 +42,6 @@ E:\Dropbox\Dev\Codename - Rainbow\NetInject\obj\Debug\App.g.cs
 E:\Dropbox\Dev\Codename - Rainbow\NetInject\obj\Debug\App.baml
 E:\Dropbox\Dev\Codename - Rainbow\NetInject\obj\Debug\SettingsWindow.g.cs
 E:\Dropbox\Dev\Codename - Rainbow\NetInject\obj\Debug\SettingsWindow.baml
+C:\Users\mrgre_000\Documents\GitHub\NetInject\NetInject\bin\Debug\NetInject.exe.config
+C:\Users\mrgre_000\Documents\GitHub\NetInject\NetInject\obj\Debug\NetInject.exe
+C:\Users\mrgre_000\Documents\GitHub\NetInject\NetInject\obj\Debug\NetInject.pdb
