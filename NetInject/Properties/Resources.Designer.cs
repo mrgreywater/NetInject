@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NetInject.Annotations {
+namespace NetInject.Properties {
     using System;
     
     

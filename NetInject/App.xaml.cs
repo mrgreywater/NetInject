@@ -9,15 +9,22 @@ namespace NetInject {
     using System;
     using System.Diagnostics;
     using System.Globalization;
+    using System.Linq;
     using System.Threading;
     using System.Windows;
     using NotifyIcon;
+    using Utils;
     /// <summary>
     ///     Main application start and shutdown logic
     /// </summary>
     public partial class App {
         public TaskbarIcon TrayMenu { get; private set; }
         protected override void OnStartup(StartupEventArgs e) {
+            //Check if it is VmWare and disable HWAcceleration
+            if (HandleWpfHwAcceleration()) {
+                Shutdown();
+                return;
+            }
             base.OnStartup(e);
             //Fatal exception handling
             DispatcherUnhandledException += (sender, args) => {
@@ -53,6 +60,40 @@ namespace NetInject {
             if (e.InnerException != null)
                 return String.Format("{0}\n{1}", e.Message, GetExceptionMessages(e.InnerException));
             return e.Message + "\n";
+        }
+        private static bool HandleWpfHwAcceleration() {
+            try {
+                string restart = Environment.GetCommandLineArgs()
+                    .Where(s => !String.IsNullOrEmpty(s))
+                    .Select(s => s.ToLower())
+                    .FirstOrDefault(s => s.Contains("/restart"));
+                if (String.IsNullOrEmpty(restart)) {
+                    bool noHw = Environment.GetCommandLineArgs()
+                        .Where(s => !String.IsNullOrEmpty(s)).Select(s => s.ToLower())
+                        .Any(s => s.Contains("/nohw")) || VmwareHotfix.IsVm;
+                    if (!noHw || !VmwareHotfix.HwAcceleration) return false;
+                    VmwareHotfix.HwAcceleration = false;
+                    Process.Start(Environment.GetCommandLineArgs()[0], "/restart" + Process.GetCurrentProcess().Id + " /nohw");
+                    return true;
+                }
+                restart = restart.Replace("/restart", String.Empty);
+                int id;
+                if (!Int32.TryParse(restart, out id)) return false;
+                bool isRunning = true;
+                while (isRunning) {
+                    //Wait for other process to finish
+                    Thread.Sleep(100);
+                    try {
+                        if (Process.GetProcessById(id).HasExited)
+                            isRunning = false;
+                    } catch {
+                        isRunning = false;
+                    }
+                }
+                return false;
+            } catch {
+                return false;
+            }
         }
     }
 }

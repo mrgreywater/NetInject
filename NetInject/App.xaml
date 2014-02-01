@@ -11,46 +11,45 @@
             <ContextMenu x:Shared="false" x:Key="SysTrayMenu">
                 <MenuItem Header="Open NetInject" Command="{Binding ShowWindowCommand}" FontWeight="Bold">
                     <MenuItem.Icon>
-                        <Image Source="{Binding Icon}" />
+                        <Image Width="16" Height="16" Source="{Binding Icon}" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator />
                 <MenuItem Header="Settings" Command="{Binding ShowSettingsWindowCommand}">
                     <MenuItem.Icon>
-                        <Image Source="Resources\Settings.ico" />
+                        <Image Width="16" Height="16" Source="Resources\Settings.ico" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="About NetInject" Command="{Binding ShowAboutWindowCommand}">
                     <MenuItem.Icon>
-                        <Image Source="Resources\About.ico" />
+                        <Image Width="16" Height="16" Source="Resources\About.ico" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator />
                 <MenuItem Header="Exit" Command="{Binding ExitApplicationCommand}">
                     <MenuItem.Icon>
-                        <Image Source="Resources\Exit.ico" />
+                        <Image Width="16" Height="16" Source="Resources\Exit.ico" />
                     </MenuItem.Icon>
                 </MenuItem>
             </ContextMenu>
-            <!-- Todo select all menu -->
             <ContextMenu x:Shared="false" x:Key="ModuleMenu">
                 <MenuItem Header="Show in Explorer" Command="{Binding ShowInExplorer}" FontWeight="Bold">
                     <MenuItem.Icon>
-                        <Image Source="Resources\Explorer.ico" />
+                        <Image Width="16" Height="16" Source="Resources\Explorer.ico" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="{Binding ActivateCommandText}" Command="{Binding ActivateCommand}" />
                 <Separator />
                 <MenuItem Header="Open Settings" Command="{Binding ShowSettingsWindowCommand}">
                     <MenuItem.Icon>
-                        <Image Source="Resources\Settings.ico" />
+                        <Image Width="16" Height="16" Source="Resources\Settings.ico" />
                     </MenuItem.Icon>
                 </MenuItem>
             </ContextMenu>
             <ContextMenu x:Shared="false" x:Key="InjectorMenu">
                 <MenuItem Header="Open Settings" Command="{Binding ShowSettingsWindowCommand}" FontWeight="Bold">
                     <MenuItem.Icon>
-                        <Image Source="Resources\Settings.ico" />
+                        <Image Width="16" Height="16" Source="Resources\Settings.ico" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator />

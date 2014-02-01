@@ -27,9 +27,9 @@ namespace NetInject.ViewModel {
     ///     the module files
     /// </summary>
     internal class InjectorViewModel : ObservableObject, IDisposable {
-        private static readonly BitmapFrame ColorIcon = BitmapFrame.Create(new Uri("pack://application:,,,/Resources/MainIconColor.ico", UriKind.RelativeOrAbsolute));
-        private static readonly BitmapFrame DefaultIcon = BitmapFrame.Create(new Uri("pack://application:,,,/Resources/MainIcon.ico", UriKind.RelativeOrAbsolute));
         private static readonly RegistryKey RegistryIndex = Registry.CurrentUser.CreateSubKey("Software").CreateSubKey("NetInject").CreateSubKey(Process.GetCurrentProcess().ProcessName);
+        private readonly BitmapFrame _colorIcon = BitmapFrame.Create(new Uri("pack://application:,,,/Resources/MainIconColor.ico", UriKind.RelativeOrAbsolute));
+        private readonly BitmapFrame _defaultIcon = BitmapFrame.Create(new Uri("pack://application:,,,/Resources/MainIcon.ico", UriKind.RelativeOrAbsolute));
         private readonly FileSystemWatcher _fileWatcher = new FileSystemWatcher();
         private readonly TaskFactory _tasks = new TaskFactory(TaskScheduler.FromCurrentSynchronizationContext());
         private RemoteProcess _activeProcess;
@@ -51,12 +51,13 @@ namespace NetInject.ViewModel {
             _fileWatcher.Deleted += OnFileChanged;
             _fileWatcher.Renamed += OnFileChanged;
             _fileWatcher.EnableRaisingEvents = true;
+            Icon = _defaultIcon;
         }
         public string Header {
-            get { return "NetInject by gReY: " + ApplicationName; }
+            get { return "NetInject: " + ApplicationName; }
         }
         public ImageSource Icon {
-            get { return Application.Current != null ? (((App)Application.Current).TrayMenu.IconSource) : DefaultIcon; }
+            get { return Application.Current != null ? (((App)Application.Current).TrayMenu.IconSource) : _defaultIcon; }
             set {
                 _tasks.StartNew(() => {
                     if (Equals(value, Icon) || Application.Current == null) return;
@@ -77,7 +78,7 @@ namespace NetInject.ViewModel {
             private set {
                 if (value == _activeProcess) return;
                 _activeProcess = value;
-                Icon = value == null ? DefaultIcon : ColorIcon;
+                Icon = value == null ? _defaultIcon : _colorIcon;
                 _tasks.StartNew(() => Modules.ForEach(module => module.BaseProcess = value));
                 RaisePropertyChanged("ActiveProcess");
             }

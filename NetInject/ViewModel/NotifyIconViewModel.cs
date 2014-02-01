@@ -50,7 +50,9 @@ namespace NetInject.ViewModel {
                         window.Show();
                     }
                     if (window == null) return;
-                    MessageBox.Show(window, "Written by gReY\nContact: mr.greywater+netinject@gmail.com\n\nLicensed under Mozilla Public License Version 2.0\n", "About NetInject", MessageBoxButton.OK,
+                    MessageBox.Show(window,
+                        "Written by gReY\nContact: mr.greywater+netinject@gmail.com\n\nNetInject: https://github.com/mrgreywater/NetInject \nLicensed under Mozilla Public License Version 2.0\n",
+                        "About NetInject", MessageBoxButton.OK,
                         MessageBoxImage.Information);
                     if (useTemporaryWindow)
                         window.Close();

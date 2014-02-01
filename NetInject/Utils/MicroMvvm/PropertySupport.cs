@@ -3,7 +3,7 @@ namespace NetInject.Utils.MicroMvvm {
     using System;
     using System.Linq.Expressions;
     using System.Reflection;
-    using Annotations;
+    using Properties;
     public static class PropertySupport {
         public static String ExtractPropertyName<T>(Expression<Func<T>> propertyExpresssion) {
             if (propertyExpresssion == null)
