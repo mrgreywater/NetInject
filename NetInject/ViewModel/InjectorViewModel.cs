@@ -2,7 +2,7 @@
 //  Author: gReY
 //  Contact: mr.greywater+netinject@gmail.com
 //  Software: NetInject
-//  This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. 
+//  This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 //  If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //
 namespace NetInject.ViewModel {
@@ -166,7 +166,7 @@ namespace NetInject.ViewModel {
             for (; !Disposed; Thread.Sleep(1000)) {
                 if (ActiveProcess != null || ApplicationName == null)
                     continue;
-                Process runningProcess = Process.GetProcessesByName(ApplicationName).OrderBy(p => p.StartTime).FirstOrDefault();
+                Process runningProcess = Process.GetProcessesByName(ApplicationName).Where(p => !p.HasExited).OrderBy(p => p.StartTime).FirstOrDefault();
                 if (runningProcess == null)
                     continue;
                 ActiveProcess = new RemoteProcess(runningProcess);
