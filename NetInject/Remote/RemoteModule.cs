@@ -2,7 +2,7 @@
 //  Author: gReY
 //  Contact: mr.greywater+netinject@gmail.com
 //  Software: NetInject
-//  This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. 
+//  This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 //  If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //
 namespace NetInject.Remote {
@@ -13,6 +13,8 @@ namespace NetInject.Remote {
     using System.IO;
     using System.Linq;
     using System.Runtime.InteropServices;
+    using System.Text;
+
     using Annotations;
     using Interop;
     [DebuggerDisplay("{Name}")]
@@ -232,12 +234,10 @@ namespace NetInject.Remote {
         }
         private IntPtr GetFunctionAddress(int ordinal, int nameIndex) {
             var addressOffset =
-                Process.Memory.Read<int>(BaseAddress + (int)ExportDirectory.AddressOfFunctions +
-                                         ordinal * sizeof(int)); //exportFunctions[ordinal];
+                Process.Memory.Read<int>(BaseAddress + (int)ExportDirectory.AddressOfFunctions + ordinal * sizeof(int)); //exportFunctions[ordinal];
             if (addressOffset < ExportDirectoryInfo.VirtualAddress || addressOffset >= ExportDirectoryInfo.VirtualAddress + ExportDirectoryInfo.Size)
                 return BaseAddress + addressOffset;
-            int forwardStringOffset = ordinal == nameIndex ? addressOffset : Process.Memory.Read<int>(BaseAddress + (int)ExportDirectory.AddressOfFunctions + nameIndex * sizeof(int));
-            string forwardingString = Process.Memory.ReadString(BaseAddress + forwardStringOffset);
+            string forwardingString = Process.Memory.ReadString(BaseAddress + addressOffset);
             int dot = forwardingString.IndexOf('.');
             if (dot <= -1) return IntPtr.Zero;
             string redirectModuleName = forwardingString.Substring(0, dot);
